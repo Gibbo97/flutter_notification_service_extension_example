@@ -15,7 +15,7 @@ void dispatcher() async {
 
 Future<void> initNotificationPreSync() async {
   MethodChannel foregroundChannel = const MethodChannel(
-    "com.example.flutterCallbackCacheExample/flutterCallbackCacheExampleForegroundChannel",
+    "nz.co.resolution.flutterCallbackCacheExample/flutterCallbackCacheExampleForegroundChannel",
   );
 
   final CallbackHandle callback = PluginUtilities.getCallbackHandle(dispatcher)!;

@@ -1,3 +1,10 @@
+//
+//  NotificationService.swift
+//  NotificationServiceExtension
+//
+//  Created by Jack Gibbons on 08/10/2024.
+//
+
 import UserNotifications
 import UIKit
 import Flutter
@@ -5,15 +12,11 @@ import Foundation
 import os
 import UIKit
 
-
-import UserNotifications
-
 class NotificationService: UNNotificationServiceExtension {
 
     var contentHandler: ((UNNotificationContent) -> Void)?
     var bestAttemptContent: UNMutableNotificationContent?
     let logger = Logger()
-
 
     override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
         self.logger.log("NotificationPreSync Service Extension called")

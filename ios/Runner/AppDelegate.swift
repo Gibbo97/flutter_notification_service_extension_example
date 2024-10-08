@@ -12,8 +12,10 @@ import UIKit
       let center = UNUserNotificationCenter.current()
       center.requestAuthorization(options: [.alert, .sound, .badge]){granted, error in}
       
+      UIApplication.shared.registerForRemoteNotifications()
+      
       let controller : FlutterViewController = window?.rootViewController as! FlutterViewController
-      let foregroundChannel = FlutterMethodChannel(name: "com.example.flutterCallbackCacheExample/flutterCallbackCacheExampleForegroundChannel",
+      let foregroundChannel = FlutterMethodChannel(name: "nz.co.resolution.flutterCallbackCacheExample/flutterCallbackCacheExampleForegroundChannel",
                                                    binaryMessenger: controller.binaryMessenger)
       
       foregroundChannel.setMethodCallHandler({
@@ -34,6 +36,11 @@ import UIKit
       
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
+    
+    override func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+       let deviceTokenString = deviceToken.reduce("", { $0 + String(format: "%02X", $1) })
+       print("deviceToken:\(deviceTokenString)")
+    }
 }
 
 public struct UserDefaultsHelper {

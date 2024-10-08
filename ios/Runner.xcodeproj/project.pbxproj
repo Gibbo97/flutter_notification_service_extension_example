@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		041E87362CB4E3EE0032F961 /* AlertPushNotification.apns in Resources */ = {isa = PBXBuildFile; fileRef = 041E87352CB4E3CE0032F961 /* AlertPushNotification.apns */; };
-		041E87592CB5175A0032F961 /* NotificationServiceExtension.appex in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 041E87522CB5175A0032F961 /* NotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		041E878B2CB52E740032F961 /* NotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 041E87842CB52E740032F961 /* NotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		041E87952CB535A00032F961 /* AlertPushNotification.apns in Resources */ = {isa = PBXBuildFile; fileRef = 041E87942CB535A00032F961 /* AlertPushNotification.apns */; };
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
 		331C808B294A63AB00263BE5 /* RunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C807B294A618700263BE5 /* RunnerTests.swift */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
@@ -19,11 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		041E87572CB5175A0032F961 /* PBXContainerItemProxy */ = {
+		041E87892CB52E740032F961 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 97C146E61CF9000F007C117D /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 041E87512CB5175A0032F961;
+			remoteGlobalIDString = 041E87832CB52E740032F961;
 			remoteInfo = NotificationServiceExtension;
 		};
 		331C8085294A63A400263BE5 /* PBXContainerItemProxy */ = {
@@ -36,13 +36,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		9705A1C41CF9048500538489 /* Embed Frameworks */ = {
+		041E878C2CB52E740032F961 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				041E87592CB5175A0032F961 /* NotificationServiceExtension.appex in Embed Frameworks */,
+				041E878B2CB52E740032F961 /* NotificationServiceExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9705A1C41CF9048500538489 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,9 +60,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		041E87352CB4E3CE0032F961 /* AlertPushNotification.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = AlertPushNotification.apns; sourceTree = "<group>"; };
-		041E874B2CB4E72B0032F961 /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
-		041E87522CB5175A0032F961 /* NotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		041E87842CB52E740032F961 /* NotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		041E87942CB535A00032F961 /* AlertPushNotification.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = AlertPushNotification.apns; sourceTree = "<group>"; };
+		041E879E2CB5DE370032F961 /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
 		1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
 		1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
 		331C807B294A618700263BE5 /* RunnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerTests.swift; sourceTree = "<group>"; };
@@ -71,21 +81,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		041E875D2CB5175A0032F961 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+		041E87902CB52E740032F961 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 041E87512CB5175A0032F961 /* NotificationServiceExtension */;
+			target = 041E87832CB52E740032F961 /* NotificationServiceExtension */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		041E87532CB5175A0032F961 /* NotificationServiceExtension */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (041E875D2CB5175A0032F961 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = NotificationServiceExtension; sourceTree = "<group>"; };
+		041E87852CB52E740032F961 /* NotificationServiceExtension */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (041E87902CB52E740032F961 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = NotificationServiceExtension; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		041E874F2CB5175A0032F961 /* Frameworks */ = {
+		041E87812CB52E740032F961 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -126,7 +136,7 @@
 			children = (
 				9740EEB11CF90186004384FC /* Flutter */,
 				97C146F01CF9000F007C117D /* Runner */,
-				041E87532CB5175A0032F961 /* NotificationServiceExtension */,
+				041E87852CB52E740032F961 /* NotificationServiceExtension */,
 				97C146EF1CF9000F007C117D /* Products */,
 				331C8082294A63A400263BE5 /* RunnerTests */,
 			);
@@ -137,7 +147,7 @@
 			children = (
 				97C146EE1CF9000F007C117D /* Runner.app */,
 				331C8081294A63A400263BE5 /* RunnerTests.xctest */,
-				041E87522CB5175A0032F961 /* NotificationServiceExtension.appex */,
+				041E87842CB52E740032F961 /* NotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,7 +155,7 @@
 		97C146F01CF9000F007C117D /* Runner */ = {
 			isa = PBXGroup;
 			children = (
-				041E874B2CB4E72B0032F961 /* Runner.entitlements */,
+				041E879E2CB5DE370032F961 /* Runner.entitlements */,
 				97C146FA1CF9000F007C117D /* Main.storyboard */,
 				97C146FD1CF9000F007C117D /* Assets.xcassets */,
 				97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */,
@@ -154,7 +164,7 @@
 				1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */,
 				74858FAE1ED2DC5600515810 /* AppDelegate.swift */,
 				74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */,
-				041E87352CB4E3CE0032F961 /* AlertPushNotification.apns */,
+				041E87942CB535A00032F961 /* AlertPushNotification.apns */,
 			);
 			path = Runner;
 			sourceTree = "<group>";
@@ -162,26 +172,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		041E87512CB5175A0032F961 /* NotificationServiceExtension */ = {
+		041E87832CB52E740032F961 /* NotificationServiceExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 041E875E2CB5175A0032F961 /* Build configuration list for PBXNativeTarget "NotificationServiceExtension" */;
+			buildConfigurationList = 041E87912CB52E740032F961 /* Build configuration list for PBXNativeTarget "NotificationServiceExtension" */;
 			buildPhases = (
-				041E874E2CB5175A0032F961 /* Sources */,
-				041E874F2CB5175A0032F961 /* Frameworks */,
-				041E87502CB5175A0032F961 /* Resources */,
+				041E87802CB52E740032F961 /* Sources */,
+				041E87812CB52E740032F961 /* Frameworks */,
+				041E87822CB52E740032F961 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				041E87532CB5175A0032F961 /* NotificationServiceExtension */,
+				041E87852CB52E740032F961 /* NotificationServiceExtension */,
 			);
 			name = NotificationServiceExtension;
 			packageProductDependencies = (
 			);
 			productName = NotificationServiceExtension;
-			productReference = 041E87522CB5175A0032F961 /* NotificationServiceExtension.appex */;
+			productReference = 041E87842CB52E740032F961 /* NotificationServiceExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		331C8080294A63A400263BE5 /* RunnerTests */ = {
@@ -206,6 +216,7 @@
 			buildConfigurationList = 97C147051CF9000F007C117D /* Build configuration list for PBXNativeTarget "Runner" */;
 			buildPhases = (
 				9740EEB61CF901F6004384FC /* Run Script */,
+				041E878C2CB52E740032F961 /* Embed Foundation Extensions */,
 				97C146EA1CF9000F007C117D /* Sources */,
 				97C146EB1CF9000F007C117D /* Frameworks */,
 				97C146EC1CF9000F007C117D /* Resources */,
@@ -215,7 +226,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				041E87582CB5175A0032F961 /* PBXTargetDependency */,
+				041E878A2CB52E740032F961 /* PBXTargetDependency */,
 			);
 			name = Runner;
 			productName = Runner;
@@ -233,7 +244,7 @@
 				LastUpgradeCheck = 1510;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
-					041E87512CB5175A0032F961 = {
+					041E87832CB52E740032F961 = {
 						CreatedOnToolsVersion = 16.0;
 					};
 					331C8080294A63A400263BE5 = {
@@ -261,13 +272,13 @@
 			targets = (
 				97C146ED1CF9000F007C117D /* Runner */,
 				331C8080294A63A400263BE5 /* RunnerTests */,
-				041E87512CB5175A0032F961 /* NotificationServiceExtension */,
+				041E87832CB52E740032F961 /* NotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		041E87502CB5175A0032F961 /* Resources */ = {
+		041E87822CB52E740032F961 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -286,7 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */,
-				041E87362CB4E3EE0032F961 /* AlertPushNotification.apns in Resources */,
+				041E87952CB535A00032F961 /* AlertPushNotification.apns in Resources */,
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
 				97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */,
 				97C146FC1CF9000F007C117D /* Main.storyboard in Resources */,
@@ -330,7 +341,7 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		041E874E2CB5175A0032F961 /* Sources */ = {
+		041E87802CB52E740032F961 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -357,10 +368,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		041E87582CB5175A0032F961 /* PBXTargetDependency */ = {
+		041E878A2CB52E740032F961 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 041E87512CB5175A0032F961 /* NotificationServiceExtension */;
-			targetProxy = 041E87572CB5175A0032F961 /* PBXContainerItemProxy */;
+			target = 041E87832CB52E740032F961 /* NotificationServiceExtension */;
+			targetProxy = 041E87892CB52E740032F961 /* PBXContainerItemProxy */;
 		};
 		331C8086294A63A400263BE5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -389,7 +400,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		041E875A2CB5175A0032F961 /* Debug */ = {
+		041E878D2CB52E740032F961 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -400,7 +411,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 273TUFG5H7;
+				DEVELOPMENT_TEAM = 5D76Z9RK2X;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -417,7 +428,7 @@
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterCallbackCacheExample.NotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = nz.co.resolution.flutterCallbackCacheExample.serviceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
@@ -428,7 +439,7 @@
 			};
 			name = Debug;
 		};
-		041E875B2CB5175A0032F961 /* Release */ = {
+		041E878E2CB52E740032F961 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -439,7 +450,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 273TUFG5H7;
+				DEVELOPMENT_TEAM = 5D76Z9RK2X;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -455,7 +466,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterCallbackCacheExample.NotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = nz.co.resolution.flutterCallbackCacheExample.serviceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -464,7 +475,7 @@
 			};
 			name = Release;
 		};
-		041E875C2CB5175A0032F961 /* Profile */ = {
+		041E878F2CB52E740032F961 /* Profile */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -475,7 +486,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 273TUFG5H7;
+				DEVELOPMENT_TEAM = 5D76Z9RK2X;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -491,7 +502,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterCallbackCacheExample.NotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = nz.co.resolution.flutterCallbackCacheExample.serviceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -557,18 +568,17 @@
 			baseConfigurationReference = 7AFA3C8E1D35360C0083082E /* Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = 273TUFG5H7;
+				DEVELOPMENT_TEAM = 5D76Z9RK2X;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterCallbackCacheExample;
+				PRODUCT_BUNDLE_IDENTIFIER = nz.co.resolution.flutterCallbackCacheExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -582,7 +592,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 273TUFG5H7;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterCallbackCacheExample.RunnerTests;
@@ -600,7 +609,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 273TUFG5H7;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterCallbackCacheExample.RunnerTests;
@@ -616,7 +624,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 273TUFG5H7;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterCallbackCacheExample.RunnerTests;
@@ -742,18 +749,17 @@
 			baseConfigurationReference = 9740EEB21CF90195004384FC /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = 273TUFG5H7;
+				DEVELOPMENT_TEAM = 5D76Z9RK2X;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterCallbackCacheExample;
+				PRODUCT_BUNDLE_IDENTIFIER = nz.co.resolution.flutterCallbackCacheExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -767,18 +773,17 @@
 			baseConfigurationReference = 7AFA3C8E1D35360C0083082E /* Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = 273TUFG5H7;
+				DEVELOPMENT_TEAM = 5D76Z9RK2X;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterCallbackCacheExample;
+				PRODUCT_BUNDLE_IDENTIFIER = nz.co.resolution.flutterCallbackCacheExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -789,12 +794,12 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		041E875E2CB5175A0032F961 /* Build configuration list for PBXNativeTarget "NotificationServiceExtension" */ = {
+		041E87912CB52E740032F961 /* Build configuration list for PBXNativeTarget "NotificationServiceExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				041E875A2CB5175A0032F961 /* Debug */,
-				041E875B2CB5175A0032F961 /* Release */,
-				041E875C2CB5175A0032F961 /* Profile */,
+				041E878D2CB52E740032F961 /* Debug */,
+				041E878E2CB52E740032F961 /* Release */,
+				041E878F2CB52E740032F961 /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
