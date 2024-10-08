@@ -2,7 +2,7 @@ import Foundation
 
 public struct UserDefaultsHelper {
 
-    public static let userDefaults = UserDefaults(suiteName: "group.flutterCallbackCacheExample")!
+    public static let userDefaults = UserDefaults(suiteName: "group.resolution.callbackCacheExample")!
 
     public enum Key {
         case callbackHandle
