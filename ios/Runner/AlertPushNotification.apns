@@ -1,0 +1,10 @@
+{
+    "Simulator Target Bundle": "com.example.flutterCallbackCacheExample",
+    "aps" : {
+       "mutable-content" : 1,
+       "alert" : {
+            "title" : "All Hands",
+            "body" : "Amos has joined the meeting"
+        },
+   },
+}
