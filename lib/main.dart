@@ -10,7 +10,7 @@ void main() async {
 
 @pragma('vm:entry-point')
 void dispatcher() async {
-  print("running dart code from notification");
+  print("running dart code from a push notification");
 }
 
 Future<void> initNotificationPreSync() async {
@@ -20,6 +20,7 @@ Future<void> initNotificationPreSync() async {
 
   final CallbackHandle callback = PluginUtilities.getCallbackHandle(dispatcher)!;
   final int handle = callback.toRawHandle();
+  print("handle: $handle");
 
   await foregroundChannel.invokeMethod<void>('initialize', {
     "callbackHandle": handle,
