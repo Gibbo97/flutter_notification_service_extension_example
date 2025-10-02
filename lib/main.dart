@@ -2,29 +2,36 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'dart:developer' as developer;
+
 
 void main() async {
+  print("flutter.nz.co.resolution.flutterCallbackCacheExample: Starting app");
   runApp(const MyApp());
   initNotificationPreSync();
 }
 
 @pragma('vm:entry-point')
 void dispatcher() async {
-  print("running dart code from a push notification");
+  print("flutter.nz.co.resolution.flutterCallbackCacheExample, NotificationPreSync: Running dart code in (dispatcher) entry-point");
 }
 
 Future<void> initNotificationPreSync() async {
+  print("flutter.nz.co.resolution.flutterCallbackCacheExample: Running initNotificationPreSync, starting");
+
   MethodChannel foregroundChannel = const MethodChannel(
     "nz.co.resolution.flutterCallbackCacheExample/flutterCallbackCacheExampleForegroundChannel",
   );
 
   final CallbackHandle callback = PluginUtilities.getCallbackHandle(dispatcher)!;
   final int handle = callback.toRawHandle();
-  print("handle: $handle");
+  print("flutter.nz.co.resolution.flutterCallbackCacheExample: Running initNotificationPreSync, got handle: $handle");
 
   await foregroundChannel.invokeMethod<void>('initialize', {
     "callbackHandle": handle,
   });
+
+  print("flutter.nz.co.resolution.flutterCallbackCacheExample: Running initNotificationPreSync, invoked initialize in foreground channel");
 }
 
 class MyApp extends StatelessWidget {
@@ -54,7 +61,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'flutter_callback_cache_example'),
     );
   }
 }

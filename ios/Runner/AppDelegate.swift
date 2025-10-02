@@ -1,5 +1,6 @@
 import Flutter
 import UIKit
+import os
 
 @main
 @objc class AppDelegate: FlutterAppDelegate {
@@ -22,11 +23,20 @@ import UIKit
           [weak self] (call: FlutterMethodCall, result: FlutterResult) -> Void in
           switch (call.method, call.arguments as? [AnyHashable: Any]) {
           case ("initialize", let .some(arguments)):
+              let logger = Logger(subsystem: "flutter.nz.co.resolution.flutterCallbackCacheExample", category: "foregroundChannel.setMethodCallHandler")
+
               guard let handle = arguments["callbackHandle"] as? Int64 else {
                   result("Invalid Parameters")
                   return
               }
               UserDefaultsHelper.storeCallbackHandle(handle)
+              logger.log("Handling initialize, stored handle:\(handle)")
+              
+              let retrievedHandle = UserDefaultsHelper.getStoredCallbackHandle()
+             
+              logger.log("Handling initialize, retrieved handle:\(retrievedHandle ?? -1)")
+
+
               return
           default:
               result("Unhandled Method")
@@ -39,7 +49,12 @@ import UIKit
     
     override func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
        let deviceTokenString = deviceToken.reduce("", { $0 + String(format: "%02X", $1) })
-       print("deviceToken:\(deviceTokenString)")
+        if #available(iOS 14.0, *) {
+            let logger = Logger(subsystem: "flutter.nz.co.resolution.flutterCallbackCacheExample", category: "didRegisterForRemoteNotificationsWithDeviceToken")
+            logger.log("notification deviceToken:\(deviceTokenString)")
+        } else {
+            // Fallback on earlier versions
+        }
     }
 }
 

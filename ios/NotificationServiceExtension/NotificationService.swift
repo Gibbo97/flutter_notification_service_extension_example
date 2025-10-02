@@ -16,30 +16,35 @@ class NotificationService: UNNotificationServiceExtension {
 
     var contentHandler: ((UNNotificationContent) -> Void)?
     var bestAttemptContent: UNMutableNotificationContent?
-    let logger = Logger()
+    let logger = Logger(subsystem: "flutter.nz.co.resolution.flutterCallbackCacheExample", category: "NotificationPreSync")
 
     override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
-        self.logger.log("NotificationPreSync Service Extension called")
+        self.logger.log("Service Extension called")
 
         self.contentHandler = contentHandler
         bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
                 
         guard let callbackHandle = UserDefaultsHelper.getStoredCallbackHandle()
         else {
-            self.logger.log("[\(String(describing: self))] no callback handle stored")
+            self.logger.log("No callback handle stored")
             
             serviceExtensionTimeWillExpire()
             return
         }
+        self.logger.log("Successfully retrieved callback handle: \(callbackHandle)")
+
         let exampleShowingNil = FlutterCallbackCache.lookupCallbackInformation(callbackHandle)
 
         guard let flutterCallbackInformation = FlutterCallbackCache.lookupCallbackInformation(callbackHandle)
         else {
-            self.logger.log("[\(String(describing: self))] cannot look up callback information")
+            self.logger.log("Cannot find handle in FlutterCallbackCache")
             
             serviceExtensionTimeWillExpire()
             return
         }
+        
+        self.logger.log("Successfully found handle in FlutterCallbackCache: \(flutterCallbackInformation)")
+
     }
     
     override func serviceExtensionTimeWillExpire() {
