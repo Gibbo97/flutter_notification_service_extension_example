@@ -32,6 +32,21 @@ class NotificationService: UNNotificationServiceExtension {
             return
         }
         self.logger.log("Successfully retrieved callback handle: \(callbackHandle)")
+        
+        var cachePath: String
+        
+        if let appGroupIdentifier = Bundle.main.object(forInfoDictionaryKey: "FlutterAppGroupIdentifier") as? String,
+           let groupURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroupIdentifier) {
+
+            let cacheURL = groupURL.appendingPathComponent("Library/Caches")
+            try? FileManager.default.createDirectory(at: cacheURL,
+                                                      withIntermediateDirectories: true,
+                                                      attributes: nil)
+            cachePath = cacheURL.path
+        }
+
+        FlutterCallbackCache.setCachePath(cachePath)
+        FlutterCallbackCache.loadCacheFromDisk()
 
         let exampleShowingNil = FlutterCallbackCache.lookupCallbackInformation(callbackHandle)
 
