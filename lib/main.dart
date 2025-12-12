@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:developer' as developer;
 
-
 void main() async {
   print("flutter.nz.co.resolution.flutterCallbackCacheExample: Starting app");
   runApp(const MyApp());
@@ -12,8 +11,9 @@ void main() async {
 }
 
 @pragma('vm:entry-point')
-void dispatcher() async {
-  print("flutter.nz.co.resolution.flutterCallbackCacheExample, NotificationPreSync: Running dart code in (dispatcher) entry-point");
+void dispatcher(List<String> args) {
+  print(
+      "flutter.nz.co.resolution.flutterCallbackCacheExample, NotificationPreSync: Running dart code in (dispatcher) entry-point, NotificationServiceExtension");
 }
 
 Future<void> initNotificationPreSync() async {
@@ -87,6 +87,22 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
+  // ✅ Add test method
+  Future<void> _testDispatcher() async {
+    print("Testing dispatcher from Flutter...");
+
+    MethodChannel foregroundChannel = const MethodChannel(
+      "nz.co.resolution.flutterCallbackCacheExample/flutterCallbackCacheExampleForegroundChannel",
+    );
+
+    try {
+      await foregroundChannel.invokeMethod('testDispatcher');
+      print("Test dispatcher invoked!");
+    } catch (e) {
+      print("Error testing dispatcher: $e");
+    }
+  }
+
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -141,6 +157,11 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            SizedBox(height: 40),
+            ElevatedButton(
+              onPressed: _testDispatcher,
+              child: Text('Test Dispatcher'),
             ),
           ],
         ),

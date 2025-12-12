@@ -4,6 +4,8 @@ import os
 
 @main
 @objc class AppDelegate: FlutterAppDelegate {
+  var testHeadlessEngine: FlutterEngine?  // ✅ Add a test engine
+    
   override func application(
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
@@ -38,6 +40,11 @@ import os
 
 
               return
+          case ("testDispatcher", _):  // ✅ Add test method
+              self?.testDispatcherInHeadlessEngine()
+              result("Testing dispatcher...")
+              return
+          
           default:
               result("Unhandled Method")
               return
@@ -46,6 +53,38 @@ import os
       
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
+    
+    func testDispatcherInHeadlessEngine() {
+        let logger = Logger(subsystem: "flutter.nz.co.resolution.flutterCallbackCacheExample", category: "TestDispatcher")
+
+        logger.log("=== Testing Dispatcher in Headless Engine ===")
+
+        // Clean up old engine if exists
+        testHeadlessEngine?.destroyContext()
+
+        // Create new headless engine
+        logger.log("Creating headless Flutter engine...")
+        let engine = FlutterEngine(name: "test_headless", project: nil, allowHeadlessExecution: true)
+        self.testHeadlessEngine = engine
+
+        logger.log("Attempting to run dispatcher entrypoint...")
+
+        let success = engine.run(
+            withEntrypoint: "dispatcher",
+            libraryURI: nil
+        )
+
+        logger.log("Engine run result: \(success)")
+
+        if success {
+            logger.log("✓ Engine started successfully")
+            logger.log("Waiting to see if dispatcher executes...")
+
+        } else {
+            logger.log("❌ Engine failed to start")
+        }
+    }
+
     
     override func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
        let deviceTokenString = deviceToken.reduce("", { $0 + String(format: "%02X", $1) })
